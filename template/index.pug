@@ -1,0 +1,13 @@
+extends ./common/head
+block content
+    div
+        div.text-center
+            input(placeholder="请输入书名/ISBN检索")
+            button 搜索
+
+block other
+
+    +showMessage('info', '显示错误')
+    span good boy
+    div
+        include ./common/toolbar

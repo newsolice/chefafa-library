@@ -1,0 +1,48 @@
+extends ../common/head
+
+block content
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        div.container-fluid
+            div.navbar-header
+                button.navbar-toggle.collapsed
+                a.navbar-brand.fixed-height
+                    img.logo-icon(src="/images/logo.gif", alt="车发发")
+            dvi.navbar-collapse.collapse
+                ul.nav.navbar-nav.navbar-right.nav-yet-fixed-margin
+                    li
+                        a.fixed-padding 系统设置
+                    li.dropdown
+                        a.fixed-padding.dropdown-toggle(data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+                            | administrator
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a 个人信息
+                            li
+                                a 修改密码
+                            li
+                                a 退出登录
+
+    div #{current} bbb
+    div.container-fluid.align-top
+        div.row
+            div.col-sm-2.sidebar
+                ul.nav.nav-sidebar
+                    li(class=(current === '/') ? "active" : '')
+                        a(href="/admin") 图书列表
+
+                    li(class=(current === '/storage') ? "active" : '')
+                        a(href="/admin/storage") 新书入库
+                    li(class=(current === '/borrow') ? "active" : '')
+                        a(href="/admin/borrow") 借书管理
+                    li(class=(current === '/user') ? "active" : '')
+                        a(href="/admin/user") 用户管理
+                    li(class=(current === '/category') ? "active" : '')
+                        a(href="/admin/category") 分类管理
+                    li(class=(current === '/data') ? "active" : '')
+                        a(href="/admin/data") 借阅统计
+                    li(class=(current === '/system') ? "active" : '')
+                        a(href="/admin/system") 系统信息
+            div.col-sm-10.col-sm-offset-2.main
+                h3.page-header #{heading}
+                block right-main

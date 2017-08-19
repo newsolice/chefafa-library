@@ -1,0 +1,21 @@
+{
+  "name": "chefafa",
+  "version": "0.0.1",
+  "description": "chefafa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "e"
+  ],
+  "author": "s",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "mysql": "^2.14.1",
+    "pug": "^2.0.0-rc.3"
+  }
+}

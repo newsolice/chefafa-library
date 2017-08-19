@@ -1,0 +1,86 @@
+extends ./layout
+
+block right-main
+    form.form-horizontal#add-new-book-form
+        div.form-group
+            label.col-sm-2.control-label(for="book_name")
+                span.required-field  *
+                | 图书名称：
+            div.col-sm-4
+                input.form-control(name="book_name", id="book_name", required)
+            div.col-sm-4
+                span.text-danger.error-tips
+
+        div.form-group
+            label.col-sm-2.control-label(for="book_author")
+                span.required-field  *
+                | 图书作者：
+            div.col-sm-4
+                input.form-control(name="book_author", id="book_author", required)
+            div.col-sm-4
+                span.text-danger.error-tips
+
+        div.form-group
+            label.col-sm-2.control-label(for="book_isbn")
+                span.required-field *
+                | 图书编号：
+            div.col-sm-4
+                input.form-control(name="book_isbn", id="book_isbn", required)
+            div.col-sm-4
+                span.text-danger.error-tips
+
+        div.form-group
+            label.col-sm-2.control-label(for="book_cate")
+                span.required-field *
+                | 所属分类：
+            div.col-sm-4
+                select.form-control(name="book_cate", id="book_cate", required)
+                    option(value='') --请选择--
+                    option(value="1") 计算机科学
+                    option(value="2") 市场营销
+                    option(value="3") 美工
+            div.col-sm-4
+                span.text-danger.error-tips
+
+        div.form-group
+            label.col-sm-2.control-label(for="press_name") 出版社：
+            div.col-sm-4
+                input.form-control(name="press_name", id="press_name")
+
+        div.form-group
+            label.col-sm-2.control-label(for="press_date") 出版日期：
+            div.col-sm-4
+                input.form-control(name="press_date", id="press_date")
+
+        div.form-group
+            label.col-sm-2.control-label(for="book_page") 页数：
+            div.col-sm-4
+                input.form-control(name="book_page", id="book_page")
+
+        div.form-group
+            label.col-sm-2.control-label(for="book_price") 价格：
+            div.col-sm-4
+                input.form-control(name="book_price", id="book_price")
+
+        div.form-group
+            label.col-sm-2.control-label(for="book_num")
+                span.required-field *
+                | 数量：
+            div.col-sm-4
+                input.form-control(name="book_num", id="book_num", type="number", required)
+
+        div.form-group
+            label.col-sm-2.control-label(for="book_cover") 封面：
+            div.col-sm-4
+                input.form-control(name="book_cover", id="book_cover", type="file")
+                //img.img-thumbnail#book-cover-handler(src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNWRmOTgzY2M1NSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1ZGY5ODNjYzU1Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=")
+
+        div.form-group
+            label.col-sm-2.control-label(for="book_desc") 内容简介：
+            div.col-sm-4
+                textarea.form-control(name="book_desc", id="book_desc", rows="5", placeholder="这本书主要讲的什么内容，有什么看点...")
+
+        div.form-group
+            div.col-sm-4.col-sm-offset-2
+                button.btn.btn-info(type="submit") 提交
+                button.btn.btn-default(type="reset")  重置
