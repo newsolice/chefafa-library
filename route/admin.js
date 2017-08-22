@@ -71,22 +71,28 @@ router.get('/login', function (req, res) {
     res.render('admin/login');
 });
 
-router.route('/add')
-    .get(function (req, res) {
-        res.render('admin/add');
-    })
-    .post(dataVaild, function (req, res) {
-        let now = Date.now().toString().slice(0, -3);
-        let sql = 'INSERT INTO `lib_book` (book_name, book_author, book_isbn, book_category_id, book_desc, utime, ctime) VALUES ("'+req.body.book_name+'","'+req.body.book_author+'","'+req.body.book_isbn+'","'+req.body.book_category_id+'","'+req.body.book_desc+'",'+now+','+now+') ';
-        db.query(sql, function (err, rows, fields) {
-            if (err) {
-                res.send(err.message);
-            } else {
-                res.send('ok');
-            }
-        });
 
-    });
+router.post('/add', function (req, res) {
+    console.log(req.body)
+    res.send('添加成功!');
+});
+
+// router.route('/add')
+//     .get(function (req, res) {
+//         res.render('admin/add');
+//     })
+//     .post(dataVaild, function (req, res) {
+//         let now = Date.now().toString().slice(0, -3);
+//         let sql = 'INSERT INTO `lib_book` (book_name, book_author, book_isbn, book_category_id, book_desc, utime, ctime) VALUES ("'+req.body.book_name+'","'+req.body.book_author+'","'+req.body.book_isbn+'","'+req.body.book_category_id+'","'+req.body.book_desc+'",'+now+','+now+') ';
+//         db.query(sql, function (err, rows, fields) {
+//             if (err) {
+//                 res.send(err.message);
+//             } else {
+//                 res.send('ok');
+//             }
+//         });
+//
+//     });
 
 router.get('/edit/:bookid', function (req, res) {
     

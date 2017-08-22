@@ -1,7 +1,7 @@
 extends ./layout
 
 block right-main
-    form.form-horizontal#add-new-book-form
+    form.form-horizontal#add-new-book-form(action='/admin/add', method="post")
         div.form-group
             label.col-sm-2.control-label(for="book_name")
                 span.required-field  *

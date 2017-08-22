@@ -11,11 +11,8 @@ $(document).on('submit', '#add-new-book-form', function (e) {
             $(that[item.field]).parent().next().find('.error-tips').html(item.message);
             $(that[item.field]).parents('.form-group').addClass('has-error')
         }
-
-
-    })
-
-
+    });
+    that.submit();
 }).on('click', '#book-cover-handler', function (e) {
     $('input[name="book_cover"]').trigger('click')
-})
+});
